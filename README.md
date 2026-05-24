@@ -1,66 +1,26 @@
-## Foundry
+# Desain Token
+--------------
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Nama Token
+Apa nama lengkap token? → "My Example Token"
+Apa symbol/ticker?      → "MET"
+Kenapa nama ini?        → Deskriptif, mudah diingat
 
-Foundry consists of:
+## Supply
+Berapa total supply awal?     → 1,000,000 token
+Apakah supply bisa bertambah? → Ya, owner bisa mint
+Apakah ada max supply?        → Tidak (untuk contoh ini)
+Siapa yang dapat supply awal? → Deployer (msg.sender)
 
-- **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
-- **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
-- **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
-- **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## Decimals
+Berapa decimals?   → 18 (standard Ethereum)
+Kenapa 18?         → Konsisten dengan ETH, kompatibel semua DEX
+Kapan pakai < 18?  → Token yang merepresentasikan nilai fiat
+                     (USDC pakai 6, mirip cent)
 
-## Documentation
+## Bagaimana 1,000,000 token direpresentasikan di contract:
+1 token = 1 * 10^18 = 1_000_000_000_000_000_000
 
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+Jadi 1,000,000 token = 1_000_000 * 10^18
+                     = 1_000_000 * 1e18
+                     = 1e24
